@@ -33,21 +33,29 @@
     border: none;
 }
 
-#search-button{
+.btns{
     padding: 10px 1rem;
     margin: 0 10px;
     border-radius: 5px;
     border: none;
     color: whitesmoke;
-    background-color: rgb(164, 75, 209);
+    /* background-color: rgb(164, 75, 209); */
 }
+#search-button{
+    background-color: green;
+}
+
+#remove-button{
+    background-color: #cf2e2e;
+}
+
 
 
 main{
     max-width: 1200px;
     margin: 0 auto;
     margin-block: 30px;
-    border: 1px solid rgb(162, 29, 29);
+    /* border: 1px solid rgb(162, 29, 29); */
 }
 
 main section{

@@ -3,13 +3,13 @@ const searchButton = document.querySelector("#search-button");
 const posterContainer = document.querySelector(".poster-container");
 const movieDetailBox = document.querySelector(".movie-details-box");
 
-const removeButton = document.querySelector("#remove-button")
-
+const removeButton = document.querySelector("#remove-button");
+const movieContainer = document.querySelector('.movie-container');
 
 searchButton.addEventListener('click', function(){
     // console.log(searchBar.value);
     if(searchBar.value){
-        // fetchData(searchBar.value)
+        fetchData(searchBar.value)
     }
     searchBar.value = '';
 })
@@ -51,10 +51,10 @@ async function fetchData(inputValue) {
     console.log(err);
   }
 }
-fetchData()
+// fetchData()
 
 
 // try to remove
 removeButton.addEventListener('click', function(){
-    removeButton(fetchData)
+  movieContainer.remove();
 })
