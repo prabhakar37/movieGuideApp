@@ -1,39 +1,58 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap');
+
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-.navbar{
-    background-color: burlywood;
-
-     font-family: "Doto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  font-variation-settings:
-    "ROND" 0;
+html, body {
+  height: 100%;           
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F7FA;    
+}
+main {
+  flex: 1;         /* Take remaining space */
 }
 
-.navbar-content{
+.navbar {
+    background-color: #2C3E50;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+}
+
+.navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 0 3rem;
     padding-block: 15px;
-
 }
 
-#search-bar{
+.movie-icon{
+    background-image: linear-gradient(to right, #a1bf21, #cb9b02, #e1732e, #e04e55, #c63b79, #bf3d82, #b7408a, #ae4491, #ca4887, #e0537a, #f1626d, #fb765f);
+    /* background: linear-gradient(90deg,rgba(2, 0, 36, 1) 1%, rgba(9, 9, 121, 1) 47%, rgba(0, 212, 255, 1) 85%); */
+    /* background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffae00); */
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+#search-bar {
     padding: 10px 2rem;
     margin: 0 10px;
     border-radius: 5px;
     border: none;
 }
 
-.btns{
+.btns {
     padding: 10px 1rem;
     margin: 0 10px;
     border-radius: 5px;
@@ -41,66 +60,90 @@
     color: whitesmoke;
     /* background-color: rgb(164, 75, 209); */
 }
-#search-button{
+
+#search-button {
     background-color: green;
 }
 
-#remove-button{
+#remove-button {
     background-color: #cf2e2e;
 }
 
-
-
-main{
+main {
     max-width: 1200px;
     margin: 0 auto;
     margin-block: 30px;
     /* border: 1px solid rgb(162, 29, 29); */
 }
 
-main section{
+main section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 70vh;
 }
 
-
-
-.movie-container{
+.movie-container {
     display: flex;
     justify-content: center;
-    border: 2px solid rgb(11, 161, 38);
+    /* border: 2px solid rgb(11, 161, 38); */
+
+
+    display: flex;
+  gap: 20px;  /* image aur details ke beech gap */
+  align-items: flex-start; 
+  flex-wrap: wrap;
 
 }
 
-.poster-container{
+.movie-details-box {
+    /* border: 2px solid rgb(25, 47, 216); */
+    max-width: 50%;
+    /* background-color: #aab3ab; */
+    background-color: #2C3E50;
+    border-radius: 3px;
+    height: 100%;
 
+
+    font-family: "Mozilla Text", sans-serif;
+    font-optical-sizing: auto;
+     font-style: normal;
+    flex: 1;
 }
-.movie-details-box{
-        /* border: 2px solid rgb(25, 47, 216); */
-        max-width: 50%;
-        background-color: #aab3ab;
-            border-radius: 3px;
 
-}
-
-.movies-title{
+.movies-title {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 8px;
-    padding: 20px ;
-    background-color: #cacfcf;
+    padding: 20px;
+    background-color: #4c6782;
     gap: 10px;
     border-radius: 5px;
 }
-.movies-info{
-    background-color: #cacfcf;
+
+.movie-genre{
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.movie-genre p {
+    background-color: #2C3E50;
+    color: rgb(227, 226, 226);
+    padding: 4px 10px;
+    border-radius: 3px;
+}
+
+
+
+.movies-info {
+    background-color: #4c6782;
     display: flex;
     flex-direction: column;
-    
+    flex: 1;
+
     padding-left: 20px;
     border-radius: 5px;
     margin: 8px;
@@ -108,11 +151,31 @@ main section{
     padding: 20px 10px 100px 10px;
 }
 
-
-
-footer{
+footer {
+    background-color: #34495E;
+    height: 50px;
     text-align: center;
-    background-color: rgb(52, 52, 88);
-    padding-block: 20px;
-    
+    line-height: 50px;
+}
+
+
+
+
+
+
+.poster-container img {
+  max-width: 100%;   
+  height: auto;      
+  border-radius: 5px;
+  object-fit: contain; 
+}
+.poster-container {
+  flex: 0 0 300px; /* fix 300px width */
+}
+
+.poster-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
 }

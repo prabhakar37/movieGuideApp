@@ -3,6 +3,8 @@ const searchButton = document.querySelector("#search-button");
 const posterContainer = document.querySelector(".poster-container");
 const movieDetailBox = document.querySelector(".movie-details-box");
 
+
+
 const removeButton = document.querySelector("#remove-button");
 const movieContainer = document.querySelector('.movie-container');
 
@@ -28,6 +30,9 @@ async function fetchData(inputValue) {
     // destructuring
     const { Poster, Title, imdbRating, Released,Genre, Runtime, Actors, Plot } = data;
 
+    // console.log(Actors);
+    // console.log(typeof Actors);
+
     if (new RegExp(inputValue, "i").test(`${Title}`)) {
       const imgHtml = `<img src="${Poster}" alt="">`;
       posterContainer.innerHTML = imgHtml;
@@ -35,17 +40,31 @@ async function fetchData(inputValue) {
       const movieInfoHtml = `
             <div class="movies-title">
                 <h3>${Title}</h3>
-                <p>Rating: ${imdbRating}</p>
+                <p>Rating: &#11088; ${imdbRating}</p>
+                <div class="movie-genre"></div>
             </div>
             <div class="movies-info">
                 <p><b>Release Date: </b>${Released}</p>
-                <p><b>Genre: </b>${Genre}</p>
                 <p><b>Duration: </b>${Runtime}</p>
                 <p><b>Cast: </b>${Actors}</p>
                 <p><b>Plot:</b> ${Plot}</p>
             </div>
         `;
       movieDetailBox.innerHTML = movieInfoHtml;
+
+
+      const movieGenre = document.querySelector(".movie-genre");
+
+
+      console.log('1');
+      Genre.split(",").forEach(val => {
+        console.log('2');
+        const p= document.createElement('p');
+        console.log(val);
+      
+        p.textContent = val;
+        movieGenre.appendChild(p);
+      });
     }
   } catch (err) {
     console.log(err);
