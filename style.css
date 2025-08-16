@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar{
+    background-color: burlywood;
+
+     font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
+.navbar-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    margin: 0 3rem;
+    padding-block: 15px;
+
+}
+
+#search-bar{
+    padding: 10px 2rem;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+#search-button{
+    padding: 10px 1rem;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: none;
+    color: whitesmoke;
+    background-color: rgb(164, 75, 209);
+}
+
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-block: 30px;
+    border: 1px solid rgb(162, 29, 29);
+}
+
+main section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+
+
+.movie-container{
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgb(11, 161, 38);
+
+}
+
+.poster-container{
+
+}
+.movie-details-box{
+        /* border: 2px solid rgb(25, 47, 216); */
+        max-width: 50%;
+        background-color: #aab3ab;
+            border-radius: 3px;
+
+}
+
+.movies-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 8px;
+    padding: 20px ;
+    background-color: #cacfcf;
+    gap: 10px;
+    border-radius: 5px;
+}
+.movies-info{
+    background-color: #cacfcf;
+    display: flex;
+    flex-direction: column;
+    
+    padding-left: 20px;
+    border-radius: 5px;
+    margin: 8px;
+    gap: 10px;
+    padding: 20px 10px 100px 10px;
+}
+
+
+
+footer{
+    text-align: center;
+    background-color: rgb(52, 52, 88);
+    padding-block: 20px;
+    
+}
