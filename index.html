@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
     <title>Movie Guide Application</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body style="background-color: rgb(76, 75, 75);">
+
+<body id="main-body">
 
     <nav class="navbar">
         <div class="navbar-content">
             <h2 class="movie-icon">Movie Guide App</h2>
             <div>
-                <!-- but usne 2 dono ko form tag ke inside dala tha (do with that to)-->
                 <input type="text" placeholder="search here" id="search-bar">
-                <button type="submit" id="search-button"  class="btns">Search</button>
+                <button type="submit" id="search-button" class="btns">Search</button>
                 <button id="remove-button" class="btns">Remove</button>
             </div>
         </div>
     </nav>
 
-     <main>
+    <h2 class="display-info">Search Movie Details Here&#x1F642; </h2>
+
+    <main>
         <section>
-            <!-- <h2>Search Movies Details Here</h2> -->
             <div class="movie-container">
                 <div class="poster-container"></div>
                 <div class="movie-details-box"></div>
@@ -34,9 +36,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 All right reserve</p>
+        <p> <span>&copy; </span>2025 All Rights Reserve</p>
     </footer>
 
     <script src="./script.js"></script>
 </body>
+
 </html>
