@@ -16,15 +16,14 @@ searchButton.addEventListener('click', function(){
 })
 
 async function fetchData(inputValue) {
-  const searchQuery = inputValue;
+  let searchQuery = inputValue;
   const apiKey = "f8d48b10";
-  const movieDetailsUrl = `http://www.omdbapi.com/?t=${searchQuery}&apikey=${apiKey}`;
+  const movieDetailsUrl = `https://www.omdbapi.com/?t=${searchQuery}&apikey=${apiKey}`;
 
   //  When...  /?t=${}
   try {
     const dataResponse = await fetch(movieDetailsUrl);
     const data = await dataResponse.json();
-    // console.log(data);
 
     // destructuring
     const { Poster, Title, imdbRating, Released,Genre, Runtime, Actors, Plot } = data;
@@ -32,7 +31,9 @@ async function fetchData(inputValue) {
     if(!dataResponse.ok){
       throw new Error("Unable to fetch data")
     }
-    else if (new RegExp(searchQuery, "i").test(`${Title}`)) {
+    
+    if (new RegExp(searchQuery, "i").test(`${Title}`)) {
+
       const imgHtml = `<img src="${Poster}" alt="">`;
       posterContainer.innerHTML = imgHtml;
 
@@ -49,6 +50,7 @@ async function fetchData(inputValue) {
                 <p><b>Plot:</b> ${Plot}</p>
             </div>
         `;
+
       movieDetailBox.innerHTML = movieInfoHtml;
 
       // inserting movie Genre 
@@ -57,24 +59,23 @@ async function fetchData(inputValue) {
         const p= document.createElement('p');      
         p.textContent = val;
         movieGenre.appendChild(p);
-
         displayInfo.textContent = '';
       });
     }
     else{
-      movieContainer.remove();
-      displayInfo.textContent = `${data.Error}`;
-
+       posterContainer.innerHTML = ""; // clear poster
+       movieDetailBox.innerHTML = ""; // clear details
+       displayInfo.textContent = `${data.Error}`; // show error message
+       searchBar.value = "";
     }
   } catch (err) {    
     console.log(err);
   }
 }
-// fetchData()
-
 
 // Remove Movie info after fetch
 removeButton.addEventListener('click', function(){
-  movieContainer.remove();
-  displayInfo.textContent = "Search Movie detail here"
+  posterContainer.innerHTML = '';
+  movieDetailBox.innerHTML = '';
+  displayInfo.textContent = "Search Movie detail here";
 })
